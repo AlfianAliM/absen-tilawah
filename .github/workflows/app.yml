@@ -1,0 +1,30 @@
+name: Run absen ngaji
+
+on:
+  workflow_dispatch: # Memungkinkan menjalankan workflow secara manual
+  schedule:
+    - cron: "00 11 * * *" # 07:01 WIB
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9' # Versi Python yang digunakan
+
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install --no-cache-dir numpy pandas
+        if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
+
+
+    - name: Run app.py
+      run: python app.py
