@@ -4,7 +4,8 @@ from ummalqura.hijri_date import HijriDate
 from datetime import date
 
 TOKEN = "6894579573:AAHbFFEG3E566Gp-KWS5ItUVzpa-N-NZizM"
-CHAT_ID = "-4677671509"
+CHAT_ID = "-1001664031492"
+THREAD_ID = 8961
 
 async def send_poll():
     bot = Bot(token=TOKEN)
