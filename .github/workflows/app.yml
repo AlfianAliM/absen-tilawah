@@ -3,7 +3,7 @@ name: Run absen ngaji
 on:
   workflow_dispatch: # Memungkinkan menjalankan workflow secara manual
   schedule:
-    - cron: "00 11 * * *" # 07:01 WIB
+    - cron: "50 09 * * *"
 
 jobs:
   run-scraper:
